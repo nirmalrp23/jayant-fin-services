@@ -1375,3 +1375,73 @@
   flex: 1;
   border-bottom: 1px solid #777;
 }
+@media print {
+  /* Keep wrapper boxes on the same named page as the form, so returning to
+     the browser's default page size cannot create a trailing blank page. */
+  html:has(.loan-application),
+  body:has(.loan-application),
+  body:has(.loan-application) .workspace-layout,
+  body:has(.loan-application) .workspace-layout > div,
+  body:has(.loan-application) .workspace-content,
+  .loan-application,
+  .loan-application > form {
+    page: loan-application;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  body:has(.loan-application) > nextjs-portal {
+    display: none !important;
+  }
+}
+@media print {
+  .loan-form-sheet {
+    min-height: 315mm;
+    display: flex;
+    flex-direction: column;
+    font-size: 8.5pt;
+    line-height: 1.8;
+  }
+  .loan-form-sheet h3 {
+    font-size: 10pt;
+    margin-bottom: 6px;
+  }
+  .loan-form-sheet .loan-field {
+    margin: 3px 0;
+  }
+  .loan-form-sheet input:not([type="radio"]):not([type="file"]) {
+    height: 21px;
+  }
+  .loan-form-sheet textarea {
+    height: 36px;
+  }
+  .loan-form-sheet .loan-clause {
+    margin-top: 12px;
+  }
+  .loan-form-sheet .loan-clause p {
+    line-height: 1.75;
+  }
+  .loan-form-sheet .loan-signature {
+    margin-top: 12px;
+  }
+  .loan-form-sheet > .loan-signature:last-child {
+    margin-top: auto;
+    padding-top: 12px;
+  }
+  .loan-form-sheet .loan-group {
+    margin-top: 12px;
+  }
+  .loan-form-sheet .loan-group-line {
+    margin: 10px 0;
+  }
+  .loan-form-back {
+    justify-content: space-between;
+  }
+  .loan-form-back .loan-clause {
+    margin-top: 0;
+  }
+  .loan-form-sheet .loan-final-signatures {
+    margin-top: 18mm;
+  }
+}

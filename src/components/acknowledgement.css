@@ -270,11 +270,12 @@
   overflow: hidden;
 }
 @media print {
-  @page {
+  @page acknowledgement {
     size: A5 landscape;
     margin: 9mm 10mm;
   }
   body:has(.ack-page) {
+    page: acknowledgement;
     background: white !important;
     margin: 0 !important;
     -webkit-print-color-adjust: exact;

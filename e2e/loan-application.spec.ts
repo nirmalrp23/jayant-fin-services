@@ -18,7 +18,10 @@ test("HTML loan form supports editing, clearing and two-page printing", async ({
     },
   });
   expect(login.ok()).toBe(true);
-  await page.goto("/loan-application");
+  await page.goto("/acknowledgements");
+  await page
+    .getByRole("link", { name: "Loan application", exact: true })
+    .click();
   await expect(page.locator(".loan-form-sheet")).toHaveCount(2);
   await expect(page.locator('img[src*="loan-application-"]')).toHaveCount(0);
   await page
@@ -50,6 +53,19 @@ test("HTML loan form supports editing, clearing and two-page printing", async ({
   for (const box of boxes) {
     expect(Number(box[1])).toBeCloseTo(612, 0);
     expect(Number(box[2])).toBeCloseTo(1008, 0);
+  }
+  // The user reported a blank default-sized page from the print dialog.
+  // Cover browser headers and previously loaded acknowledgement print CSS.
+  for (const width of [390, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    const dialogPdf = await page.pdf({
+      preferCSSPageSize: true,
+      displayHeaderFooter: true,
+      printBackground: true,
+    });
+    expect(dialogPdf.toString("latin1").match(/\/Type \/Page\b/g)).toHaveLength(
+      2,
+    );
   }
   for (const width of [320, 390]) {
     await page.setViewportSize({ width, height: 900 });
