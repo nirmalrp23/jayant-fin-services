@@ -1,0 +1,546 @@
+.ack-toolbar,
+.ack-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.ack-toolbar {
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.ack-help {
+  font-size: 13px;
+  color: #626960;
+  margin: 14px 0;
+  line-height: 1.7;
+}
+.ack-status {
+  font-size: 14px;
+  color: #085010;
+  margin: 8px 0;
+}
+.ack-stage {
+  width: 100%;
+  overflow: auto;
+  padding-bottom: 12px;
+}
+.ack-sizer {
+  width: 820px;
+  margin: auto;
+}
+.ack-slip {
+  box-sizing: border-box;
+  width: 820px;
+  height: 560px;
+  background: #fcfaf5;
+  color: #1e7b3a;
+  border: 2px solid #234764;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  transform-origin: top left;
+  line-height: 1.4;
+  isolation: isolate;
+}
+.ack-slip * {
+  box-sizing: border-box;
+}
+.ack-head {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 25px 30px 0;
+}
+.ack-logo {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+}
+.ack-titles {
+  flex: 1;
+  text-align: center;
+  margin-right: 86px;
+}
+.ack-titles h2 {
+  font:
+    700 29px/1.1 Arial,
+    sans-serif;
+  letter-spacing: 1px;
+  color: #22783a;
+  margin: 0;
+}
+.ack-titles p {
+  font:
+    700 18px/1.5 Arial,
+    sans-serif;
+  letter-spacing: 1.1px;
+  color: #b89038;
+  margin: 8px 0 0;
+}
+.ack-rule {
+  height: 2px;
+  background: #bfa059;
+  margin: 10px 30px 0;
+  position: relative;
+}
+.ack-rule:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  top: -4px;
+  border-radius: 50%;
+  background: #bfa059;
+}
+.ack-meta {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 30px 4px;
+  font-size: 14px;
+  align-items: center;
+}
+.ack-meta > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ack-number {
+  width: 210px;
+}
+.ack-date {
+  width: 225px;
+}
+.ack-number input,
+.ack-number .ack-value {
+  color: #bb4130 !important;
+  font-weight: 700 !important;
+  font-size: 19px !important;
+}
+.ack-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 154px 1fr;
+  gap: 30px;
+  padding: 0 30px;
+  position: relative;
+}
+.ack-watermark {
+  position: absolute;
+  top: 30px;
+  right: 120px;
+  width: 250px;
+  height: 250px;
+  opacity: 0.08;
+  z-index: -1;
+  border-radius: 50%;
+}
+.ack-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 154px;
+  height: 196px;
+  border: 1px solid #a6b7c7;
+  background: white;
+  border-radius: 9px;
+  overflow: hidden;
+  cursor: pointer;
+  color: #7f9185;
+}
+.ack-photo:disabled {
+  cursor: default;
+}
+.ack-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ack-photo-hint {
+  font-size: 13px;
+  text-align: center;
+}
+.ack-photo-caption {
+  font-size: 11px;
+  text-align: center;
+  opacity: 0.75;
+  margin: 7px 0;
+}
+.ack-fields {
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ack-row {
+  display: grid;
+  grid-template-columns: 123px 16px minmax(0, 1fr);
+  align-items: center;
+  font-size: 14px;
+  min-height: 27px;
+}
+.ack-row label {
+  font-weight: 400;
+}
+.ack-slip input,
+.ack-value {
+  font:
+    400 15px/1.4 Arial,
+    sans-serif;
+  color: #111;
+  width: 100%;
+  min-width: 0;
+  padding: 3px 5px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  display: block;
+  overflow-wrap: anywhere;
+}
+.ack-slip input {
+  height: 29px;
+}
+.ack-slip input::placeholder {
+  color: #87968a;
+  font-size: 12px;
+}
+.ack-slip input:hover {
+  background: #edf0e8;
+}
+.ack-slip input:focus {
+  outline: 2px solid #b89038;
+  background: #fff6df;
+}
+.ack-value {
+  white-space: pre-wrap;
+  min-height: 29px;
+}
+.ack-signs {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 38px 14px;
+  font-size: 13px;
+}
+.ack-signs > div {
+  width: 225px;
+  border-top: 1px solid #9dafbe;
+  padding-top: 5px;
+}
+.ack-foot {
+  background: #1e7b3a;
+  color: #e4c98a;
+  text-align: center;
+  font-size: 13px;
+  padding: 12px 0;
+}
+.ack-foot span {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.ack-foot span:before,
+.ack-foot span:after {
+  content: "";
+  width: 52px;
+  height: 2px;
+  background: #b89038;
+}
+.ack-slip:after {
+  content: "";
+  position: absolute;
+  right: -48px;
+  bottom: 28px;
+  width: 170px;
+  height: 170px;
+  border: 10px solid transparent;
+  border-bottom-color: #b89038;
+  border-radius: 50%;
+  transform: rotate(-38deg);
+  pointer-events: none;
+}
+.ack-export .ack-photo {
+  border-color: #a6b7c7;
+}
+.is-preview {
+  overflow: hidden;
+}
+@media print {
+  @page {
+    size: A5 landscape;
+    margin: 9mm 10mm;
+  }
+  body:has(.ack-page) {
+    background: white !important;
+    margin: 0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body:has(.ack-page) .workspace-sidebar,
+  body:has(.ack-page) .workspace-topbar,
+  body:has(.ack-page) .workspace-footer,
+  body:has(.ack-page) .ack-screen-only,
+  body:has(.ack-page) nextjs-portal {
+    display: none !important;
+  }
+  body:has(.ack-page) .workspace-layout {
+    display: block !important;
+  }
+  body:has(.ack-page) .workspace-content {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+  .ack-stage {
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+  .ack-sizer {
+    width: 190mm !important;
+    height: 130mm !important;
+    margin: 0 !important;
+  }
+  .ack-slip {
+    transform: none !important;
+    zoom: 0.8758;
+    break-inside: avoid;
+    box-shadow: none !important;
+  }
+  .ack-photo-hint {
+    visibility: hidden;
+  }
+  .ack-slip input {
+    outline: none !important;
+    background: transparent !important;
+  }
+  .ack-slip input::placeholder {
+    color: transparent;
+  }
+}
+.ack-print-value {
+  display: none;
+}
+@media print {
+  .ack-slip input {
+    display: none !important;
+  }
+  .ack-print-value {
+    display: block !important;
+  }
+}
+/* Workspace controls share the app palette; the slip keeps its print design. */
+.ack-page {
+  min-width: 0;
+}
+.ack-toolbar {
+  margin: 0 0 18px;
+  gap: 12px;
+}
+.ack-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  background: white;
+  border: 1px solid #e2e5dc;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  font-size: 14px;
+}
+.ack-strip label {
+  font-weight: 600;
+  color: #085010;
+}
+.ack-strip select,
+.ack-strip input,
+.ack-member-nav button {
+  font: inherit;
+  border: 1px solid #d6dbd1;
+  border-radius: 10px;
+  background: white;
+  padding: 7px 9px;
+  color: #1b2a3a;
+}
+.ack-strip select {
+  width: 320px;
+  max-width: 100%;
+}
+.ack-strip input {
+  width: 100px;
+}
+.ack-member-nav {
+  display: flex;
+  gap: 5px;
+}
+.ack-member-nav button {
+  width: 38px;
+  color: #153a63;
+  font-weight: 700;
+}
+.ack-member-nav button:disabled {
+  opacity: 0.5;
+}
+.ack-sheet-status {
+  margin-left: auto;
+  color: #6b7683;
+}
+.ack-stage {
+  padding: 20px 16px;
+  background: #efefe8;
+  border-radius: 18px;
+}
+.ack-stage .ack-sizer {
+  margin: auto;
+}
+.ack-status:empty {
+  display: none;
+}
+.ack-status {
+  margin: 0;
+  padding: 10px 20px;
+}
+.ack-slip {
+  box-shadow: 0 10px 26px #0e2c4c38;
+  border-color: #153a63;
+}
+.ack-slip input:hover {
+  background: #153a630b;
+}
+.ack-slip input:focus {
+  outline: none;
+  background: #fff6df;
+  box-shadow: inset 0 -1px 0 #be8c2c;
+}
+.ack-titles h2 {
+  font-size: 29px;
+}
+.ack-fields {
+  gap: 8px;
+}
+.ack-row {
+  font-size: 15px;
+}
+.ack-row input,
+.ack-row .ack-value {
+  font-size: 16px;
+}
+.ack-row {
+  grid-template-columns: 123px 16px minmax(0, 1fr);
+}
+.ack-photo-tools {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  margin-top: 5px;
+}
+.ack-photo-tools button {
+  font:
+    600 11px Arial,
+    sans-serif;
+  padding: 4px 9px;
+  border: 1px solid #a9bcd0;
+  background: white;
+  color: #153a63;
+  border-radius: 3px;
+}
+.ack-signs > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ack-bottom {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px;
+  font-size: 12px;
+  color: #5a6472;
+}
+.ack-bottom button,
+.ack-bottom a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.ack-batch {
+  display: none;
+}
+@media (max-width: 600px) {
+  .ack-toolbar .ack-actions {
+    gap: 7px;
+  }
+  .ack-strip {
+    gap: 9px;
+    padding: 12px;
+  }
+  .ack-sheet-status {
+    width: 100%;
+    margin: 0;
+  }
+  .ack-stage {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .ack-strip select {
+    width: calc(100% - 70px);
+  }
+}
+@media print {
+  .ack-batch {
+    display: none;
+  }
+  .ack-print-batch .ack-stage {
+    display: none;
+  }
+  .ack-print-batch .ack-batch {
+    display: block;
+  }
+  .ack-batch .ack-slip {
+    break-after: page;
+    margin: 0;
+  }
+  .ack-batch .ack-slip:last-child {
+    break-after: auto;
+  }
+}
+@media print {
+  .ack-stage {
+    background: white;
+    border-radius: 0;
+  }
+  .ack-page {
+    background: white;
+    min-height: 0;
+  }
+}
+
+.ack-frequency {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  min-height: 29px;
+}
+.ack-frequency label {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  color: #111;
+  font-size: 14px;
+}
+.ack-slip .ack-frequency input {
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  accent-color: #085010;
+}
+.ack-fields {
+  gap: 4px;
+}
+.ack-slip input[type="number"] {
+  appearance: auto;
+}

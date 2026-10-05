@@ -8,7 +8,13 @@ export default async function Layout({
 }) {
   const c = await context();
   const keys = Object.values(c.access.permissions).flat();
-  const links = ["dashboard", "branches", "profile"];
+  const links = [
+    "dashboard",
+    "branches",
+    "loan-application",
+    "profile",
+    "acknowledgements",
+  ];
   if (c.access.globalRole || keys.includes("users.view")) links.push("users");
   if (c.access.globalRole || keys.includes("roles.manage")) links.push("roles");
   if (

@@ -10,6 +10,7 @@ import {
   UserCircle,
   LockKeyhole,
   Menu,
+  FileCheck,
 } from "lucide-react";
 import { BrandLogo } from "./brand-logo";
 import { Logout } from "./auth-form";
@@ -32,6 +33,8 @@ export function WorkspaceShell({
   const items = [
     ["dashboard", "Overview", LayoutDashboard],
     ["branches", "Branches", Building2],
+    ["loan-application", "Loan application", ScrollText],
+    ["acknowledgements", "Acknowledgements", FileCheck],
     ["users", "People", Users],
     ["roles", "Roles & permissions", ShieldCheck],
     ["audit", "Audit log", ScrollText],
